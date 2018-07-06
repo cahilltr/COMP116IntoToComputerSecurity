@@ -4,6 +4,57 @@ COMP 116: Intro to Computer Security - Tufts Online Class - https://tuftsdev.git
 ## Week 1
 
 ### Slide Notes
+- "CIA Triad"
+  - confidentiality
+  - integrity
+  - availability
+- Event -> Anything
+- incident -> malicious event
+- bug -> error at implementation level
+- flaw -> error at a deeper level, particularly in the design
+- https://stackoverflow.com/questions/152457/what-is-the-difference-between-a-port-and-a-socket
+- OSI -> Open Systems Interconnection
+  1. Physical
+  2. Data link
+  3. Network
+  4. Transport
+  5. Session
+  6. Presentation
+  7. Application
+- Network Sniffing
+  - looks at/analyzes packets
+  - Most traffic is still unencrypted plaintext
+  - Types of Networks: unswitched-> packets flow through all devices on network but you
+look at only the packets addressed to you and switched->packets flow through specific devices on network; most
+common today
+- Network Scanning
+  - Many scans get you flagged; you want to be stealthy
+  - Stealthy scans
+    - FIN scan: only TCP FIN flag in packet
+    - NULL scan: No flags in packets
+    - Christmas Tree (XMas) scan: FIN, PSH, URG flags in packet
+  - Defending Against Scanners
+    - Close services on computers that are not necessary
+    - Packet filtering
+    - Firewalls
+  - Decoy Scanning (aka cloak scan)
+    - Blame someone else
+    - "which makes it appear to the remote host that the host(s) you specify as
+decoys are scanning the target network too. Thus their IDS might report 5– 10 port scans from unique IP addresses, but they won't know which IP was scanning them and which were innocent decoys. While this can be defeated through router path tracing, response-dropping, and other active mechanisms, it is generally an effective technique for hiding your IP address."
+- Distributed Denial of service
+  - SYN Flood -> exhausts states in TCP/IP stack
+    - To Prevent:
+      - Reduce SYN-received Timeout
+      - Drop half-open connections when limit has been reached and new requests for connection narrative
+      - Limit the number of half-open connections from a specific source
+      - Increase the length of the half-open connection queue
+      - Use SYN cookies; they use special algorithm for determining the initial sequence number of the server
+  - Teardrop
+    - old; Since the machine receiving such packets cannot reassemble them due to a bug in TCP/IP fragmentation reassembly, the packets overlap one another, crashing the target network device.”
+  - Ping of Death
+    - However, many ping implementations allow the user to specify a packet size larger than 65,507 bytes. A grossly oversized ICMP packet can trigger a range of adverse system reactions such as denial of service (DoS), crashing, freezing, and rebooting.”
+  - ICMP/UDP Flood Attack
+    - Overload victim with a huge number of ICMP/UDP echo requests with spoofed source IP addresses
 
 ### Readings
 
@@ -49,9 +100,34 @@ COMP 116: Intro to Computer Security - Tufts Online Class - https://tuftsdev.git
 #### Fun With Network Friends (2600 Magazine, Summer 2008) - https://tuftsdev.github.io/DefenseAgainstTheDarkArts/readings/2600vol25no2.pdf
 
 #### We scanned the Internet for port 22 (Errata Security) - https://blog.erratasec.com/2013/09/we-scanned-internet-for-port-22.html#.Wz5oQ9VKgUE
--
 
-#### Reading Questions/Learn More's
+#### Thousands of computers open to eavesdropping and hijacking (Sophos) - https://nakedsecurity.sophos.com/2014/08/15/thousands-of-computers-open-to-eavesdropping-and-hijacking/
+- Virtual Network Computing (VNC) is remote desktop and it should be secured with a long password
+
+#### Deep Inside a DNS Amplification DDoS Attack (Cloudflare) - https://blog.cloudflare.com/deep-inside-a-dns-amplification-ddos-attack/
+- "A SMURF attack involves an attacker sending ICMP requests (i.e., ping requests) to the network's broadcast address (i.e., X.X.X.255) of a router configured to relay ICMP to all devices behind the router. The attacker spoofs the source of the ICMP request to be the IP address of the intended victim. Since ICMP does not include a handshake, the destination has no way of verifying if the source IP is legitimate."
+
+#### Brian Krebs' Blog Hit by 665 Gbps DDoS Attack (SecurityWeek) - https://www.securityweek.com/brian-krebs-blog-hit-665-gbps-ddos-attack
+- 665 gbps is alot
+
+#### Network Protocols (Destroy All Software) - https://www.destroyallsoftware.com/compendium/network-protocols?share_key=97d3ba4c24d21147
+
+### Labs
+
+#### Lab: Working with the Command Line
+##### Part 1, The Basics
+1. which
+2. ifconfig -a
+3. ps
+4. netstat -ltnp
+5. ls -la
+6. file
+7.
+8. arp
+9. China
+10. geoiplookup
+
+### Questions/Learn More's
 1. Amplicifcation Attacks: https://www.cloudflare.com/learning/ddos/dns-amplification-ddos-attack/
 2. DDOS being cover for other attacks: https://www.zdnet.com/article/denial-of-service-attacks-now-a-cover-for-something-more-sinister/
 3.
