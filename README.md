@@ -127,6 +127,16 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
 9. China
 10. geoiplookup
 
+#### Lab: Packet Sluth
+
+#### Lab: Scanning and Reconnaissance
+##### Part 1, Using nmap
+1. 80/tcp, http; 110, pop3; 443, https; 1720, h323q931; 5060, sip
+2. Yes
+2a. nmap -sv <ip address>, nginx - 1.10.3
+3.
+4. Oracle Virtualbox or QEMU
+
 ### Questions/Learn More's
 1. Amplicifcation Attacks: https://www.cloudflare.com/learning/ddos/dns-amplification-ddos-attack/
 2. DDOS being cover for other attacks: https://www.zdnet.com/article/denial-of-service-attacks-now-a-cover-for-something-more-sinister/
