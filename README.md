@@ -141,3 +141,21 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
 1. Amplicifcation Attacks: https://www.cloudflare.com/learning/ddos/dns-amplification-ddos-attack/
 2. DDOS being cover for other attacks: https://www.zdnet.com/article/denial-of-service-attacks-now-a-cover-for-something-more-sinister/
 3.
+
+
+## Week 2
+
+### Slide Notes
+
+### Readings
+#### How to Dramatically Improve Corporate IT Security Without Spending Millions (Praetorian) - https://p16.praetorian.com/downloads/report/How%20to%20Dramatically%20Improve%20Corporate%20IT%20Security%20Without%20Spending%20Millions%20-%20Praetorian.pdf
+- "..attackers don’t rely on zero-day exploits extensively — unique attacks that take advantage of previously unknown software holes to get into systems. That’s because they don’t have to."
+- Top Attack Vectors
+  1. WEAK DOMAIN USER PASSWORDS
+  2. BROADCAST NAME RESOLUTION POISONING
+  3. LOCAL ADMINISTRATOR ATTACKS - AKA PASS THE HASH
+  4. CLEARTEXT PASSWORDS FOUND IN MEMORY - MIMIKATZ
+  5. INSUFFICIENT NETWORK ACCESS CONTROLS
+- "If employees have Local Administrator rights to more than their own system, then malware is able to spread to those systems more easily."
+- Broadcast Name Resolution Posioning: The attacker configures its system to respond to broadcast requests such as LLMNR, NetBIOS, or MDNS by providing its own IP. 
+- Modern versions of the Microsoft Windows operating system store domain credentials in cleartext within memory of the LSASS process.
