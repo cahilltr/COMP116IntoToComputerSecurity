@@ -128,6 +128,30 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
 10. geoiplookup
 
 #### Lab: Packet Sluth
+1. 367
+2. FTP
+3. Password is in clear text, see packet 14
+4. SFTP
+5. 192.168.1.8, see packet 9
+6. username: blinkythewonderchimp, password F00tball!
+7. & 8.  Aleph1.txt, 045ece36a178933c16fba8ee340b7ac459e95475317df833bffd2c2f8bfb2c85.jpg, C-658VsXoAo3ovC.jpg, geer.source.27iv17.txt, wut.jpg (5 files)
+9. N/A
+10. 76409
+11. 2
+12.
+  - ventas@wekiguatemala.com.gt:$Alesgt1.1 -> IMAP, 74.220.219.
+  - wbgapp31216:Q827wO6656!nW99_al -> HTTP, utils.wbg-server.se
+13. No
+14. Wireshark -> Statistics -> Resolved addresses
+15. 3
+16. HTTP, 130.64.23.35:80
+  - brodgers:TheyPlayWithGreatCharacter
+  - dmoyes:IAmAFootballGenius
+  - aoursler:ld10tExpert
+17.
+18.
+19.
+20. Use HTTPS
 
 #### Lab: Scanning and Reconnaissance
 ##### Part 1, Using nmap
@@ -136,6 +160,8 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
 2a. nmap -sv <ip address>, nginx - 1.10.3
 3.
 4. Oracle Virtualbox or QEMU
+5. asdf
+6. TODO: use telnet on 1720
 
 ### Questions/Learn More's
 1. Amplicifcation Attacks: https://www.cloudflare.com/learning/ddos/dns-amplification-ddos-attack/
@@ -157,5 +183,39 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
   4. CLEARTEXT PASSWORDS FOUND IN MEMORY - MIMIKATZ
   5. INSUFFICIENT NETWORK ACCESS CONTROLS
 - "If employees have Local Administrator rights to more than their own system, then malware is able to spread to those systems more easily."
-- Broadcast Name Resolution Posioning: The attacker configures its system to respond to broadcast requests such as LLMNR, NetBIOS, or MDNS by providing its own IP. 
+- Broadcast Name Resolution Posioning: The attacker configures its system to respond to broadcast requests such as LLMNR, NetBIOS, or MDNS by providing its own IP.
 - Modern versions of the Microsoft Windows operating system store domain credentials in cleartext within memory of the LSASS process.
+
+#### You Wouldn't Base64 a Password - Cryptography Decoded (Paragon Initiative) - https://paragonie.com/blog/2015/08/you-wouldnt-base64-a-password-cryptography-decoded
+- Don't implement cryptography yourself
+- Keyless Cryptography: cryptographic hash function, which accepts one input and returns a single deterministic fixed-size output.
+- Secret Key Cryptography: they typically require two pieces of input: The message and a secret key
+- Keyed Hash Functions - Message authentication: is a special implementation of a hash function that accepts a message and a secret key and produces a Message Authentication Code (MAC).
+
+#### Enterprise Security - SSL/TLS Primer Part 1 - Data Encryption (Akamai) - https://blogs.akamai.com/2016/03/enterprise-security---ssltls-primer-part-1---data-encryption.html
+- TLS is used to secure communication between two parties.  Originally called Secure Sockets Layer (SSL) and later changed to Transport Layer Security (TLS), it utilizes both asymmetric cryptography as well as symmetric cryptography to provide data privacy, integrity, and authentication.
+- In asymmetric cryptography, there are two keys: a public and a private; In symmetric cryptography, the same key is used to both encrypt and decrypt data.
+- TLS has two phases: The asymmetric phase and the bulk data encryption (symmetric phase).
+- HTTPS is simply HTTP inside of a TLS session
+
+#### Enterprise Security - SSL/TLS Primer Part 2 - Public Key Certificates (Akamai) - https://blogs.akamai.com/2016/03/enterprise-security---ssltls-primer-part-2---public-key-certificates.html
+- Inside of the certificate is:
+  - The common name for the site represented by the certificate.
+  - The public key for the asymmetric key pair.
+  - Some options for the certificate (not important in this discussion).
+  - A Certificate Authority (CA) signature.
+- Self-signed certificates are certificates that have no explicit CA signer, but rather vouch for themselves.
+
+#### GitHub Security Update: Reused password attack - https://blog.github.com/2016-06-16-github-security-update-reused-password-attack/
+- Don't reuse passwords
+
+#### Analyzing the Patterns of Numbers in 10M Passwords (2015) - http://minimaxir.com/2015/02/password-numbers/
+- "...2000 is a kewl number"
+- ~51% of passwords have 1 or 0 digits
+- "... the local maxima in number of digits in a password all occur at even numbers of digits..."
+- Use a password manager
+
+#### Salted Password Hashing - Doing it Right - https://crackstation.net/hashing-security.htm
+- "... never tell the user if it was the username or password they got wrong."
+- We can randomize the hashes by appending or prepending a random string, called a salt
+- Key Stretching: The idea is to make the hash function very slow, so that even with a fast GPU or custom hardware, dictionary and brute-force attacks are too slow to be worthwhile.
