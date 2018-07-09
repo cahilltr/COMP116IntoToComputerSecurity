@@ -166,7 +166,6 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
 ### Questions/Learn More's
 1. Amplicifcation Attacks: https://www.cloudflare.com/learning/ddos/dns-amplification-ddos-attack/
 2. DDOS being cover for other attacks: https://www.zdnet.com/article/denial-of-service-attacks-now-a-cover-for-something-more-sinister/
-3.
 
 
 ## Week 2
@@ -219,3 +218,19 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
 - "... never tell the user if it was the username or password they got wrong."
 - We can randomize the hashes by appending or prepending a random string, called a salt
 - Key Stretching: The idea is to make the hash function very slow, so that even with a fast GPU or custom hardware, dictionary and brute-force attacks are too slow to be worthwhile.
+
+#### Hacker, Hack Thyself - https://blog.codinghorror.com/hacker-hack-thyself/
+
+#### AdiOS: Say Goodbye to Nosy iPhone Apps (Veracode) - https://www.veracode.com/blog/2012/02/adios-say-goodbye-to-nosy-iphone-apps
+- Lots of apps access your whole contact list for legitimate reasons
+- In order to check whether the app is actually transmitting the address book information, you'd need to perform a full static analysis, or a manual test using a tool such as mitmproxy.
+
+#### Mitmproxy: Your D.I.Y. Private Eye (Medium) - https://medium.com/@maxgreenwald/mitmproxy-your-d-i-y-private-eye-864c08f84736
+- The way Mitmproxy works is by sitting in the middle of the connection between your phone or computer, and the internet at large.
+
+#### Reverse-engineering the Kayak app with mitmproxy - http://www.shubhro.com/2014/12/18/reverse-engineering-kayak-mitmproxy/
+- To the dismay of travel hackers, fare comparison APIs frequently come and go.
+- Developers often change the “look and feel” of the mobile app, but seldom swap out the server endpoints from which data are obtained.
+
+#### How https works - https://www.sudhakar.online/programming/2015/08/09/https.html
+-
