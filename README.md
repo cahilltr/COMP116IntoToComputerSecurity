@@ -171,6 +171,22 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
 ## Week 2
 
 ### Slide Notes
+- Cryptography - The process of communicating secretly through the use of cipher
+- Cryptanalysis - The process of cracking or deciphering; code breaking
+- Cryptology - The study of cryptography or cryptanalysis
+- Cleartext / plaintext - What you are reading now
+- Encrypt - convert information or data into code to prevent unauthorized access
+- Decrypt – convert an encoded or unclear message into something intelligible, to plaintext
+- Cipher - An algorithm to perform encryption and/or decryption
+- Cryptosystem - Suite of algorithms to perform encryption and/or decryption
+- Tradeoff 1: the cost of breaking a cipher exceeds the value of the encrypted information
+- Tradeoff 2: the time required to break the cipher exceeds the useful lifetime of the information
+- Hash functions - one way encryption, no decryption thus no secret key
+- Symmetric - single key for encryption and decryption
+- Asymmetric a.k.a., public key - uses two different keys: one public (for encryption) and one private (for decryption)
+- Two files of interest on a typical Linux box:
+  - /etc/passwd - Contains users' information but no encrypted password; required for login
+  - /etc/shadow - Contains users' passwords (encrypted) with additional details relating to the password (see http://tldp.org/LDP/lame/LAME/linuxadmin-made-easy/shadow-file-formats.html for more details)
 
 ### Readings
 #### How to Dramatically Improve Corporate IT Security Without Spending Millions (Praetorian) - https://p16.praetorian.com/downloads/report/How%20to%20Dramatically%20Improve%20Corporate%20IT%20Security%20Without%20Spending%20Millions%20-%20Praetorian.pdf
