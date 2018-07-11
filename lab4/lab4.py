@@ -1,7 +1,7 @@
 import csv
-import re
+import sys
 import json
-from urllib.request import urlopen
+import pygeoip
 
 filePath = sys.argv[1]
 
@@ -17,28 +17,17 @@ for ip in ipv4List:
 	cleanIPList.append(ip.replace("[", "").replace("]",""))
 
 print(cleanIPList)
-regionList = list()
-countryCounts = {}
-for cleanIp in reversed(cleanIPList):
-	url = "http://" + cleanIp
-	print(url)
-	try:
-		response = urlopen(url)
-		data = json.load(response)
 
-		IP=data['ip']
-		org=data['org']
-		city = data['city']
-		country=data['country']
-		if country in countryCounts:
-			countryCounts[country] = countryCounts[countryCounts] + 1
-		else:
-			countryCounts[country] = 1
-		region=data['region']
-		regionList.append("IP : {4} Region : {1} Country : {2} City : {3} Org : {0}".format(org,region,country,city,IP))
-		print("IP : {4} Region : {1} Country : {2} City : {3} Org : {0}".format(org,region,country,city,IP))
-	except Exception as e:
-		print("Unexpected error:" + str(e))
-		continue
+gi = pygeoip.GeoIP('/usr/share/GeoIP/GeoIP.dat',
+                   flags=pygeoip.const.MMAP_CACHE)
+
+countryCounts = {}
+
+for cleanIp in reversed(cleanIPList):
+	country = gi.country_code_by_addr(cleanIp)
+	if country in countryCounts:
+		countryCounts[country] = countryCounts[country] + 1
+	else:
+		countryCounts[country] = 1
 
 print(countryCounts)		
