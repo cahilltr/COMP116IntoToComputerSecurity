@@ -249,4 +249,48 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
 - Developers often change the “look and feel” of the mobile app, but seldom swap out the server endpoints from which data are obtained.
 
 #### How https works - https://www.sudhakar.online/programming/2015/08/09/https.html
--
+
+## Week 3
+
+### Slide Notes
+
+### Readings
+
+#### How The Web Works --In One Easy Lesson (mkcohen.com) - http://mkcohen.com/how-the-web-works-in-one-easy-lesson
+- URLs are formatted like this: “<protocol>://<server>/<path>”.
+- DNS is the internet’s “phone book”, so to speak.
+
+#### Veracode's State of Software Security 2016 - https://www.veracode.com/sites/default/files/Resources/Reports/state-of-software-security-volume-7-veracode-report.pdf
+- 97% of java applications have a component with at least 1 known vulnerability.
+- Internal software tends to be more secure than third party software
+- CRLF injection: any vulnerability that enables any kind of Carriage Return Line Feed injection attacks. Included here are flaws involving improper output neutralization for logs and improper neutralization of CRLF in HTTP headers
+- Command or Agrument injection: One of the most severe categories of vulnerabilities, these issues allow an attacker to run arbitrary commands on the server hosting the application, giving them complete control of the environment.
+- Top 10 vulnerability categories overall
+  - CATEGORY:% APPS
+  - Information Leakage 72%
+  - Cryptographic Issues 65%
+  - Code Quality 62%
+  - CRLF Injection 53%
+  - Cross-Site Scripting 50%
+  - Directory Traversal 49%
+  - Insufficient Input Validation 44%
+  - Credentials Management 41%
+  - SQL Injection 32%
+  - Encapsulation 25%
+- In essence, developers are introducing vulnerabilities by poorly configuring elements that are actually meant to keep application data safe. This could mean utilizing SSL incorrectly or using secure cookies the wrong way
+- Developers can grow very frustrated when they work to improve the overall security of their applications through frequent testing only to be hammered for policy violations while the application is still in active development
+
+#### What happens when you type Google.com into your browser and press enter? (on GitHub) - https://github.com/alex/what-happens-when
+- punycode: a representation of Unicode with the limited ASCII character subset used for Internet host names. Using Punycode, host names containing Unicode characters are transcoded to a subset of ASCII consisting of letters, digits, and hyphen, which is called the Letter-Digit-Hyphen (LDH) subset.
+
+#### OWASP Top 10 - https://www.owasp.org/index.php/Top_10-2017_Top_10
+1. injection
+2. Broken authentication
+3. Sensitive Data Exposure
+4. XML External Entities:Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks.
+5. Broken Access Control: Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access other users' accounts, view sensitive files, modify other users' data, change access rights, etc.
+6. Security Misconfiguration
+7. Cross Site Scripting
+8. Insecure Deserialization: Insecure deserialization often leads to remote code execution. Even if deserialization flaws do not result in remote code execution, they can be used to perform attacks, including replay attacks, injection attacks, and privilege escalation attacks.
+9. Using Components with Known vulnerabilities
+10. Insuffcient logging and monitoring
