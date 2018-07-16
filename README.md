@@ -117,12 +117,12 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
 #### Lab: Working with the Command Line
 ##### Part 1, The Basics
 1. which
-2. ifconfig -a
+2. ifconfig -a (deprecated)
 3. ps
 4. netstat -ltnp
 5. ls -la
 6. file
-7.
+7. strings
 8. arp
 9. China
 10. geoiplookup
@@ -347,3 +347,8 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
 - The vulnerability lies in the affected web application, not the victim’s browser or the site hosting the CSRF.
 - Prevent via CSRF token whish can be challenged with each request.
   - These tokens should be per session at a minimum and can be per request
+
+#### Cross-Site Request Forgeries and You (Coding Horror) - https://blog.codinghorror.com/cross-site-request-forgeries-and-you/
+- If your web site is vulnerable to XSRF, you're in good company. Digg, GMail, and Wikipedia have all been successfully attacked this way before.
+
+#### CSRF Attacks - What They Are and How to Defend Against Them (Acunetix) - https://www.acunetix.com/websitesecurity/csrf-attacks/
