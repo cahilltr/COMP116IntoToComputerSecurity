@@ -250,6 +250,11 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
 
 #### How https works - https://www.sudhakar.online/programming/2015/08/09/https.html
 
+### Labs
+
+#### Lab 6: The Incident Alarm
+- https://github.com/sophwang27/scapy/blob/master/alarm.py
+
 ## Week 3
 
 ### Slide Notes
@@ -294,3 +299,51 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
 8. Insecure Deserialization: Insecure deserialization often leads to remote code execution. Even if deserialization flaws do not result in remote code execution, they can be used to perform attacks, including replay attacks, injection attacks, and privilege escalation attacks.
 9. Using Components with Known vulnerabilities
 10. Insuffcient logging and monitoring
+
+#### CWE/SANS TOP 25 Most Dangerous Software Errors - https://www.sans.org/top25-software-errors/
+- 3 categories: insecure interaction between components, risky resource management, and porous defenses
+- insecure interaction between components: These weaknesses are related to insecure ways in which data is sent and received between separate components, modules, programs, processes, threads, or systems.
+  -
+    CWE ID	Name
+    CWE-89	Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+    CWE-78	Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
+    CWE-79	Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+    CWE-434	Unrestricted Upload of File with Dangerous Type
+    CWE-352	Cross-Site Request Forgery (CSRF)
+    CWE-601	URL Redirection to Untrusted Site ('Open Redirect')
+- Risky Resource Mangements: The weaknesses in this category are related to ways in which software does not properly manage the creation, usage, transfer, or destruction of important system resources.
+  -
+    CWE ID	Name
+    CWE-120	Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')
+    CWE-22	Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
+    CWE-494	Download of Code Without Integrity Check
+    CWE-829	Inclusion of Functionality from Untrusted Control Sphere
+    CWE-676	Use of Potentially Dangerous Function
+    CWE-131	Incorrect Calculation of Buffer Size
+    CWE-134	Uncontrolled Format String
+    CWE-190	Integer Overflow or Wraparound
+- Porous Defenses: The weaknesses in this category are related to defensive techniques that are often misused, abused, or just plain ignored.
+  -
+    CWE ID	Name
+    CWE-306	Missing Authentication for Critical Function
+    CWE-862	Missing Authorization
+    CWE-798	Use of Hard-coded Credentials
+    CWE-311	Missing Encryption of Sensitive Data
+    CWE-807	Reliance on Untrusted Inputs in a Security Decision
+    CWE-250	Execution with Unnecessary Privileges
+    CWE-863	Incorrect Authorization
+    CWE-732	Incorrect Permission Assignment for Critical Resource
+    CWE-327	Use of a Broken or Risky Cryptographic Algorithm
+    CWE-307	Improper Restriction of Excessive Authentication Attempts
+    CWE-759	Use of a One-Way Hash without a Salt
+
+#### Metasploitable 2 Exploitability Guide (Rapid7) - https://metasploit.help.rapid7.com/docs/metasploitable-2-exploitability-guide
+- The Metasploitable virtual machine is an intentionally vulnerable version of Ubuntu Linux designed for testing security tools and demonstrating common vulnerabilities
+
+#### Cross-Site Request Forgery Guide: Learn All About CSRF Attacks and CSRF Protection (Veracode) - https://www.veracode.com/security/csrf
+- Cross-Site Request Forgery (CSRF) is an attack whereby a malicious website will send a request to a web application that a user is already authenticated against from a different website
+- Malicious requests are sent from a site that a user visits to another site that the attacker believes the victim is validated against.
+- The malicious requests are routed to the target site via the victim’s browser, which is authenticated against the target site.
+- The vulnerability lies in the affected web application, not the victim’s browser or the site hosting the CSRF.
+- Prevent via CSRF token whish can be challenged with each request.
+  - These tokens should be per session at a minimum and can be per request
