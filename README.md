@@ -352,3 +352,33 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
 - If your web site is vulnerable to XSRF, you're in good company. Digg, GMail, and Wikipedia have all been successfully attacked this way before.
 
 #### CSRF Attacks - What They Are and How to Defend Against Them (Acunetix) - https://www.acunetix.com/websitesecurity/csrf-attacks/
+
+#### Cross-Site Request Forgery (OWASP) - https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
+
+#### Cross-Site Request Forgeries: Exploitation and Prevention (Zeller, Felten) - http://www.cs.utexas.edu/~shmat/courses/cs378_spring09/zeller.pdf
+- Now suppose Alice visits a malicious site M. Content supplied by M contains Javascript code or an image tag that causes Alice’s browser to send an HTTP request to T. Because the request is going to T, Alice’s browser “helpfully” appends the session cookie sid to the request. On seeing the request, T infers from the cookie’s presence that the request came from Alice, so T performs the requested operation on Alice’s account. This is a successful CSRF attack.
+- CSRF attacks are possible without the use of JavaScript (for example, a simple <img> tag can be used).
+- CSRF and XSS attacks differ in that XSS attacks require JavaScript, while CSRF attacks do not
+- XSS attacks require that sites accept malicious code, while with CSRF attacks malicious code is located on third-party sites
+
+#### Blind SQL Injection: What is it? (Acuenix) - https://www.acunetix.com/websitesecurity/blind-sql-injection/
+- Discovered in 1998
+- Time based attacks: attacker instructs db to perform a time intensive operation.
+
+#### XKCD: Exploits of a Mom - https://xkcd.com/327/
+- Little Bobby Tables
+
+#### The History of SQL Injection, the Hack That Will Never Go Away (Vice) - https://motherboard.vice.com/en_us/article/aekzez/the-history-of-sql-injection-the-hack-that-will-never-go-away
+- "You could teach a 4-year-old to do it," Al-Bassam added, summing up how incredibly easy the whole process is. Indeed, Hunt has uploaded a video of him teaching his 3-year-old son how to carry out an SQLi attack with Havij.
+
+#### Anonymous Leaks Paris Climate Summit Officials' Private Data (Wired) - https://www.wired.com/2015/12/anonymous-leaks-paris-climate-summit-officials-private-data/
+
+#### Why Even Google Is Susceptible to the Most Basic Website Vulnerabilities (Veracode) - https://www.veracode.com/blog/secure-development/why-even-google-susceptible-most-basic-website-vulnerabilities
+- Given the systemic nature of these problems, the solution to application risks must be a systematic approach to security, including:
+  - A comprehensive application security (AppSec) program that includes static and dynamic testing of all code, including software composition analysis of open-source, third-party components and vendor-supplied software.
+  - A developer-friendly training program, such as online courses and video tutorials, to help developers recognize common coding weaknesses and learn preventive, secure coding practices.
+
+#### Paypal 2FA Bypass (henryhoggard.co.uk) - https://henryhoggard.co.uk/blog/Paypal-2FA-Bypass
+- Holy shit, that was easy to by pass
+
+#### 10 Scariest Vulnerabilities (Veracode) - https://www.veracode.com/sites/default/files/Resources/Infographics/10-scariest-vulnerabilities.pdf
