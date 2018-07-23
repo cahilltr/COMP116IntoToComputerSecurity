@@ -258,6 +258,12 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
 ## Week 3
 
 ### Slide Notes
+- Cookies: The maximum size of a cookie is 4 KB, Key - Value Pairs, All cookies set by server are sent to server during interaction
+- What a web proxy does: intercepts requests and responses so you can modify HTTP request header fields and request body including query strings and data; records and logs HTTP(S) traffic
+- Bad mistake: using hidden field to store sensitive information so it can be passed from one page to another. Examples: account number, password, product price
+- Path Traversal: “By manipulating variables that reference files with “dot-dot-slash (../)” sequences and its variations or by using absolute file paths, it may be possible to access arbitrary files and directories stored on file system including application source code or configuration and critical system files.”
+- Never trust user input
+- 
 
 ### Readings
 
