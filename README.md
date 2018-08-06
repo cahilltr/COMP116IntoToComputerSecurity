@@ -263,7 +263,6 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
 - Bad mistake: using hidden field to store sensitive information so it can be passed from one page to another. Examples: account number, password, product price
 - Path Traversal: “By manipulating variables that reference files with “dot-dot-slash (../)” sequences and its variations or by using absolute file paths, it may be possible to access arbitrary files and directories stored on file system including application source code or configuration and critical system files.”
 - Never trust user input
-- 
 
 ### Readings
 
@@ -388,3 +387,68 @@ decoys are scanning the target network too. Thus their IDS might report 5– 10 
 - Holy shit, that was easy to by pass
 
 #### 10 Scariest Vulnerabilities (Veracode) - https://www.veracode.com/sites/default/files/Resources/Infographics/10-scariest-vulnerabilities.pdf
+
+## Week 5
+
+### Slide Notes
+- “CWE: has to do with the vulnerability—not the instance within a product or system”
+- “CVE: has to do with the specific instance within a product or system—not the underlying flaw.”
+
+### Readings
+#### Binary Static Analysis (Chris Wysopal's talk to this class back in spring 2012) - https://tuftsdev.github.io/DefenseAgainstTheDarkArts/readings/static-binary-analysis-wysopal-tufts-comp-116.pdf
+- Static Analysis: Analysis of software performed without actually executing the program
+- Binary Analysis: Binary analysis has 100% coverage. All code can be analyzed, regardless of source availability.
+- Components of Static Binary Analysis
+  - Binary Modeler: This component builds a model from the binary directly, using type information from debug symbols if available, producing a high-level representation of the program that includes reconstructed dataflow and control flow elements suitable for human consumption or machinebased inspection.
+  - Intermediate Representation: This component is the core of the analysis, the data structure that represents the entire ‘meaning’ of theprogram being analyzed, designed carefully to represent everything and make assumptions about very little to nothing.
+  - Model Querying and Condition Searching System: This is responsible for searching the intermediate model for characteristics.
+
+#### We See the Future and It's Not Pretty: Predicting the Future Using Vulnerability Data (Chris Wysopal's talk to this class back in fall 2013) - https://tuftsdev.github.io/DefenseAgainstTheDarkArts/readings/predicting_the_future_veracode.pdf
+- State of Software Security is before a Breach Report aka "crystal ball"
+- SQL injection prevalence has plateaued, affecting approximately 32% of web applications.
+- Java code quality is the largest Vulnerability
+
+### A Brief History of Software, Security, and Software Security: Bits, Bytes, Bugs, and the BSIMM (Gary McGraw's talk to my class in fall 2013) - https://www.slideshare.net/Cigital/a-brief-history-of-software-security-and-software-security-bits-bytes-bugs-and-the-bsimm
+- Moats and Drawbridges vs predator drones
+- Software security touchpoints in SDLC
+  - Code Review (with a tool)
+  - Architectural Risk analysis
+  - Penetration testing
+#### Introduction to CVE, CWE, and the Top 25 (Steve Christey Coley's guest talk to this class back in fall 2015) - https://tuftsdev.github.io/DefenseAgainstTheDarkArts/readings/schristeycoley-20151029.pdf
+- CVE: Common Vulnerabilities and Exposures list
+- The Four I’s Principle of Vulnerability Information
+  -Incomplete
+    – Missing versions, product names
+    – Missing patch information
+  - Inaccurate
+    – Incorrect diagnosis
+    – Blatantly wrong
+  - Inconsistent
+    – Acknowledgement discrepancies
+    – Bug type discrepancies
+    – Varying severities
+  - Incomprehensible
+    – Poor writing
+    – Lack of clear formatting
+#### - Why Everything is Hackable: Computer Security is Broken From Top to Bottom (The Economist) - https://www.economist.com/science-and-technology/2017/04/08/computer-security-is-broken-from-top-to-bottom
+
+#### The Difference Between CWE and CVE (Daniel Miessler) - https://danielmiessler.com/blog/difference-cve-cwe/
+- CWE: Common Weakness Enumeration
+- CVE: Common Vulnerability Exposure
+
+#### Web Applications Under Attack: Tenable.io and the 2017 Verizon DBIR (Tenable) - https://www.tenable.com/blog/web-applications-under-attack-tenable-io-and-the-2017-verizon-dbir
+
+#### The Language of AppSec (Veracode) - https://www.veracode.com/blog/2016/08/language-appsec
+- Flaw Vs Vulnerability
+  - When a static scan identifies a flaw, it doesn’t always mean it’s exploitable; it means it needs to be reviewed
+  - A vulnerability is a flaw that has a proven exploit.
+  - A flaw is a weakness in an application that needs to be investigated.
+- Mitigate Vs Remediate
+  -  When I mitigate a flaw, I am documenting a compensating control that I believe adequately addresses the risk associated with it.
+  - When I remediate the flaw, I’m changing the code to address the risk.
+
+#### Application Security Tools: Good or Bad? (Freedom-To-Tinker) - https://freedom-to-tinker.com/2006/02/16/software-security-badness-ometer/
+-  Real attackers don’t simply “fuzz” a program with input to find problems. Attackers take software apart, determine how it works, and make it misbehave by doing what users are not supposed to do.
+- That is, if your software fails any of the canned tests, you have some serious security work to do. The tools can help uncover known issues. But if you pass all the tests with flying colors, you know nothing more than that you passed a handful of tests with flying colors.
+
+#### Badness-meters Are Good. Do You Own One? (Synopsys) - https://www.synopsys.com/blogs/software-security/badness-ometers-are-good-do-you-own-one/
